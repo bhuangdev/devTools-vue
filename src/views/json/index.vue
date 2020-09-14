@@ -120,6 +120,10 @@ export default {
 </script>
 
 <style scoped>
+.app-container {
+  margin-left: 30px;
+  margin-top: 20px;
+}
 .line {
   text-align: center;
 }

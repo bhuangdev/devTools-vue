@@ -10,53 +10,51 @@
       :set-data="setData"
     >
       <div v-for="element in list" :key="element.value" class="board-item">
-          <el-input v-model="element.value" clearable>{{element.value}}</el-input>
+        <el-input v-model="element.value" clearable>{{
+          element.value
+        }}</el-input>
       </div>
-      
     </draggable>
   </div>
 </template>
 
 <script>
-import draggable from 'vuedraggable'
+import draggable from "vuedraggable";
 
 export default {
-  name: 'DragKanbanDemo',
+  name: "DragKanbanDemo",
   components: {
     draggable
   },
-  data(){
+  data() {
     return {
-      inputData:''
-    }
+      inputData: ""
+    };
   },
   props: {
     headerText: {
       type: String,
-      default: 'Header'
+      default: "Header"
     },
     options: {
       type: Object,
       default() {
-        return {}
+        return {};
       }
     },
     list: {
       type: Array,
       default() {
-        return []
+        return [];
       }
     }
   },
   methods: {
     setData(dataTransfer) {
-      dataTransfer.setData('Text', '')
-    },
-    inputOnInput(e){
-      this.$forceUpdate();
+      dataTransfer.setData("Text", "");
     }
   }
-}
+};
 </script>
 <style lang="scss" scoped>
 .board-column {
@@ -103,4 +101,3 @@ export default {
   }
 }
 </style>
-

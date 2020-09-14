@@ -16,7 +16,12 @@
               :value="item.value"
             ></el-option>
           </el-select>
-          <el-input type="textarea" :rows="12" :placeholder="textLeft" v-model="textareaLeft"></el-input>
+          <el-input
+            type="textarea"
+            :rows="12"
+            :placeholder="textLeft"
+            v-model="textareaLeft"
+          ></el-input>
         </div>
       </el-col>
       <el-col :span="2">
@@ -24,7 +29,8 @@
           <el-button
             style="text-align:center;margin-left:25px;margin-top:150px;"
             @click="translate"
-          >翻译</el-button>
+            >翻译</el-button
+          >
         </div>
       </el-col>
       <el-col :span="8">
@@ -43,7 +49,12 @@
               :value="item.value"
             ></el-option>
           </el-select>
-          <el-input type="textarea" :rows="12" :placeholder="textRight" v-model="textareaRight"></el-input>
+          <el-input
+            type="textarea"
+            :rows="12"
+            :placeholder="textRight"
+            v-model="textareaRight"
+          ></el-input>
         </div>
       </el-col>
     </el-row>
@@ -59,22 +70,22 @@ export default {
       options1: [
         {
           value: "zh",
-          label: "中文",
+          label: "中文"
         },
         {
           value: "en",
-          label: "英文",
-        },
+          label: "英文"
+        }
       ],
       options2: [
         {
           value: "zh",
-          label: "中文",
+          label: "中文"
         },
         {
           value: "en",
-          label: "英文",
-        },
+          label: "英文"
+        }
       ],
       selectValue1: "zh",
       selectValue2: "en",
@@ -82,7 +93,7 @@ export default {
       textRight: "Please input English",
       appKey: "20200913000565284",
       salt: 2,
-      secret_key: "VQOOgSdrRIP4ZckPb0lT",
+      secret_key: "VQOOgSdrRIP4ZckPb0lT"
     };
   },
   methods: {
@@ -131,16 +142,20 @@ export default {
               this.appKey + this.textareaLeft + this.salt + this.secret_key
             )
         )
-        .then((res) => {
+        .then(res => {
           debugger;
           this.textareaRight = res.data.trans_result[0].dst;
         });
-    },
-  },
+    }
+  }
 };
 </script>
 
 <style scoped>
+.app-container {
+  margin-left: 30px;
+  margin-top: 20px;
+}
 .line {
   text-align: center;
 }
@@ -161,4 +176,3 @@ export default {
   margin-bottom: 10px;
 }
 </style>
-

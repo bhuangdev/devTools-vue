@@ -4,8 +4,8 @@
       <el-row :gutter="20">
         <el-col :span="24">
           <div class="grid-content">
-            <span style="margin-top:30px">
-              <h1>当前时间：{{ nowTime }}</h1>
+            <span style="margin-top:30px;">
+              <h1>{{ nowTime }}</h1>
             </span>
           </div>
         </el-col>
@@ -13,8 +13,8 @@
       <el-row :gutter="20">
         <el-col :span="9">
           <div class="grid-content">
-            <el-card shadow="hover" class="cardClass">
-              学习时长：{{ str }}
+            <div class="cardClass">
+              <span style="font-size:22px;">学习时长：{{ str }}</span>
               <el-button
                 type="primary"
                 size="small"
@@ -43,7 +43,7 @@
                 @click="reset"
                 >重置时间</el-button
               >
-            </el-card>
+            </div>
           </div>
         </el-col>
       </el-row>
@@ -61,6 +61,12 @@
             style="margin-left:20px;margin-bottom:30px;"
             @click="addTask"
             >+ New Task</el-button
+          >
+          <el-button
+            type="primary"
+            style="margin-left:20px;margin-bottom:30px;"
+            @click="cleanAllTask"
+            >Clean All Task</el-button
           >
         </div>
         <div class="components-container board">
@@ -113,7 +119,8 @@ export default {
       second: 0, //秒
       time: "",
       str: "00:00:00",
-      newToDo: ""
+      newToDo: "",
+      taskId: 0
     };
   },
   created() {
@@ -122,6 +129,7 @@ export default {
   methods: {
     addTask() {
       var temp = {};
+      temp.id = this.taskId++;
       temp.value = this.newToDo;
       this.list1.push(temp);
     },
@@ -215,11 +223,22 @@ export default {
       this.ms = 0;
       this.second = 0;
       this.str = "00:00:00";
+    },
+    cleanAllTask() {
+      this.list1 = [];
+      this.list2 = [];
+      this.list3 = [];
     }
   }
 };
 </script>
 <style lang="scss">
+.dashboard-container {
+  background-image: url(../../assets/bg.jpg) !important;
+  width: 1920px !important;
+  height: 1060px !important;
+  margin-top: -20px;
+}
 .dashboard-text {
   margin-bottom: 20px;
   margin-top: 15px;
@@ -234,7 +253,7 @@ export default {
   align-items: flex-start;
 }
 .cardClass {
-  min-height: 80px;
+  margin-top: 10px;
 }
 .grid-content {
   min-height: 60px;
@@ -243,7 +262,7 @@ export default {
 .kanban {
   &.todo {
     .board-column-header {
-      background: hsl(310, 90%, 70%);
+      background: hsl(231, 81%, 59%);
     }
   }
   &.working {
