@@ -10,7 +10,7 @@
       :set-data="setData"
     >
       <div v-for="element in list" :key="element.value" class="board-item">
-          <el-input v-model="inputData" clearable>{{element.value}}</el-input>
+          <el-input v-model="element.value" clearable>{{element.value}}</el-input>
       </div>
       
     </draggable>

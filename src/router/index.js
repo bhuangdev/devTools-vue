@@ -120,18 +120,6 @@ export const constantRoutes = [
     ]
   },
   {
-    path: '/task',
-    component: Layout,
-    children: [
-      {
-        path: 'index',
-        name: 'Task',
-        component: () => import('@/views/task/index'),
-        meta: { title: 'Task Panel', icon: 'form' }
-      }
-    ]
-  },
-  {
     path: '/translate',
     component: Layout,
     children: [
