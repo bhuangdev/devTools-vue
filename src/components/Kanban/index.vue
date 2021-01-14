@@ -10,7 +10,7 @@
       :set-data="setData"
     >
       <div v-for="element in list" :key="element.id" class="board-item">
-        <el-input v-model="element.value" clearable></el-input>
+        <el-input v-model="element.value" clearable style="width:88%;float:left"></el-input><el-button icon="el-icon-close" circle style="float:right;padding:5px 5px 5px 5px;margin:12px 0 0 0;" @click="deleteTask(element.id)"></el-button>
       </div>
     </draggable>
   </div>
@@ -50,13 +50,21 @@ export default {
   methods: {
     setData(dataTransfer) {
       dataTransfer.setData("Text", "");
+    },
+    deleteTask(param){
+      for(var i=0;i<this.list.length;i++){
+        if(this.list[i].id == param){
+          this.list.splice(i,1);
+        }
+      }
+      
     }
   }
 };
 </script>
 <style lang="scss" scoped>
 .board-column {
-  min-width: 300px;
+  min-width: 310px;
   min-height: 600px;
   height: auto;
   overflow: hidden;
