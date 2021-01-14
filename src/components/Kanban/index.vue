@@ -9,10 +9,8 @@
       class="board-column-content"
       :set-data="setData"
     >
-      <div v-for="element in list" :key="element.value" class="board-item">
-        <el-input v-model="element.value" clearable>{{
-          element.value
-        }}</el-input>
+      <div v-for="element in list" :key="element.id" class="board-item">
+        <el-input v-model="element.value" clearable></el-input>
       </div>
     </draggable>
   </div>
@@ -59,7 +57,7 @@ export default {
 <style lang="scss" scoped>
 .board-column {
   min-width: 300px;
-  min-height: 100px;
+  min-height: 600px;
   height: auto;
   overflow: hidden;
   background: #f0f0f0;

@@ -4,7 +4,7 @@
       <el-row :gutter="20">
         <el-col :span="24">
           <div class="grid-content">
-            <span style="margin-top:30px;">
+            <span style="margin-top:50px;font-size:2em;">
               <h1>{{ nowTime }}</h1>
             </span>
           </div>
@@ -43,6 +43,20 @@
                 @click="reset"
                 >重置时间</el-button
               >
+              <el-button
+                type="text"
+                size="small"
+                style="margin-left:10px;"
+                @click="hideAndShow('hide')"
+                >隐藏</el-button
+              >
+              <el-button
+                type="text"
+                size="small"
+                style="margin-left:5px;"
+                @click="hideAndShow('show')"
+                >显示</el-button
+              >
             </div>
           </div>
         </el-col>
@@ -68,6 +82,7 @@
             @click="cleanAllTask"
             >Clean All Task</el-button
           >
+          
         </div>
         <div class="components-container board">
           <Kanban
@@ -120,11 +135,13 @@ export default {
       time: "",
       str: "00:00:00",
       newToDo: "",
-      taskId: 0
+      taskId: 0,
+      testUrl: ""
     };
   },
   created() {
     this.nowTimes();
+    this.setBackgroundImage();
   },
   methods: {
     addTask() {
@@ -228,19 +245,48 @@ export default {
       this.list1 = [];
       this.list2 = [];
       this.list3 = [];
+    },
+    hideAndShow(param){
+      //document.styleSheets[0].addRule(navbar, { display:none }, 0)
+      var myElement = document.querySelector(".navbar");
+      var myElement1 = document.querySelector(".el-scrollbar");
+      if(param == 'hide'){
+        myElement.style.display = 'none';
+        myElement1.style.display = 'none';
+      }else{
+        myElement.style.display = 'block';
+        myElement1.style.display = 'block';
+      }
+      
+    },
+    setBackgroundImage(){
+      var arr = [
+        "../../assets/011zk3.jpg",
+        "../../assets/43vvmv.jpg",
+        "../../assets/54lqq0.jpg",
+        "../../assets/96gqz8.jpg",
+        "../../assets/96w8e8.jpg",
+        "../../assets/g8q88q.jpg",
+        "../../assets/r2e391.jpg",
+        "../../assets/r25x6m.jpg",
+        "../../assets/yml8wd.jpg",
+        "../../assets/bg.jpg",
+      ];
     }
   }
 };
 </script>
 <style lang="scss">
 .dashboard-container {
-  background-image: url(../../assets/bg.jpg) !important;
-  width: 1920px !important;
-  height: 1060px !important;
+  background-image: url('../../assets/r2e391.png') !important;
+  background-position:center;
+  background-repeat:no-repeat;
+  width: 1930px !important;
+  height: 1085px !important;
   margin-top: -20px;
 }
 .dashboard-text {
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   margin-top: 15px;
   margin-left: 40px;
 }
@@ -267,12 +313,12 @@ export default {
   }
   &.working {
     .board-column-header {
-      background: #f9944a;
+      background: #2ac06d;
     }
   }
   &.done {
     .board-column-header {
-      background: #2ac06d;
+      background: #f9944a;
     }
   }
 }

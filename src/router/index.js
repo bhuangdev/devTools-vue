@@ -62,30 +62,6 @@ export const constantRoutes = [
     ]
   },
   {
-    path: "/mockup",
-    component: Layout,
-    children: [
-      {
-        path: "index",
-        name: "Mockup",
-        component: () => import("@/views/mockup/index"),
-        meta: { title: "Mockup", icon: "form" }
-      }
-    ]
-  },
-  {
-    path: "/navigation",
-    component: Layout,
-    children: [
-      {
-        path: "index",
-        name: "Navigation",
-        component: () => import("@/views/navigation/index"),
-        meta: { title: "Site Navigation", icon: "form" }
-      }
-    ]
-  },
-  {
     path: "/regular",
     component: Layout,
     children: [
@@ -94,18 +70,6 @@ export const constantRoutes = [
         name: "Regular",
         component: () => import("@/views/regular/index"),
         meta: { title: "Regular Verification", icon: "form" }
-      }
-    ]
-  },
-  {
-    path: "/search",
-    component: Layout,
-    children: [
-      {
-        path: "index",
-        name: "Search",
-        component: () => import("@/views/search/index"),
-        meta: { title: "Problem Search", icon: "form" }
       }
     ]
   },
@@ -128,6 +92,16 @@ export const constantRoutes = [
       {
         path: "https://robinloveslife.cn/",
         meta: { title: "My Blog", icon: "link" }
+      }
+    ]
+  },
+  {
+    path: "external-link",
+    component: Layout,
+    children: [
+      {
+        path: "https://www.cnblogs.com/huangbinlooksgood/",
+        meta: { title: "My cnBlog", icon: "link" }
       }
     ]
   },

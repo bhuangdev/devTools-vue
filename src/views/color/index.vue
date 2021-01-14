@@ -1,13 +1,21 @@
 <template>
   <div class="app-container">
-    颜色提取功能 https://blog.csdn.net/weixin_44743929/article/details/107024707
+    <img :src="vvv" style="width:100px;height:100px;">
   </div>
+  
 </template>
 
 <script>
 export default {
   data() {
-    return {};
+    return {
+      xxx:"",
+      vvv:""
+    };
+  },
+  created(){
+    var temp = "222.jpg";
+    this.vvv = require('d:/img/' + temp);
   },
   methods: {
     test() {}
