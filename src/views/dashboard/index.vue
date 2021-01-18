@@ -253,9 +253,11 @@ export default {
       if(param == 'hide'){
         myElement.style.display = 'none';
         myElement1.style.display = 'none';
+        this.fullScreen();
       }else{
         myElement.style.display = 'block';
         myElement1.style.display = 'block';
+        this.cancelFullScreen();
       }
       
     },
@@ -272,6 +274,40 @@ export default {
         "../../assets/yml8wd.jpg",
         "../../assets/bg.jpg",
       ];
+    },
+    fullScreen()  
+    {  
+      var docElm = document.documentElement;  
+      //W3C   
+      if (docElm.requestFullscreen) {  
+          docElm.requestFullscreen();  
+      }  
+          //FireFox   
+      else if (docElm.mozRequestFullScreen) {  
+          docElm.mozRequestFullScreen();  
+      }  
+          //Chrome等   
+      else if (docElm.webkitRequestFullScreen) {  
+          docElm.webkitRequestFullScreen();  
+      }  
+          //IE11   
+      else if (elem.msRequestFullscreen) {  
+          elem.msRequestFullscreen();  
+      }  
+    },
+    cancelFullScreen() {  
+      if (document.exitFullscreen) {  
+          document.exitFullscreen();  
+      }  
+      else if (document.mozCancelFullScreen) {  
+          document.mozCancelFullScreen();  
+      }  
+      else if (document.webkitCancelFullScreen) {  
+          document.webkitCancelFullScreen();  
+      }  
+      else if (document.msExitFullscreen) {  
+          document.msExitFullscreen();  
+      }  
     }
   }
 };

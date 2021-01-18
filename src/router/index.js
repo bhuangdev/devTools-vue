@@ -86,7 +86,19 @@ export const constantRoutes = [
     ]
   },
   {
-    path: "external-link",
+    path: "/others",
+    component: Layout,
+    children: [
+      {
+        path: "index",
+        name: "Others",
+        component: () => import("@/views/others/index"),
+        meta: { title: "Other Common Tools", icon: "form" }
+      }
+    ]
+  },
+  {
+    path: "external-link1",
     component: Layout,
     children: [
       {
@@ -96,7 +108,7 @@ export const constantRoutes = [
     ]
   },
   {
-    path: "external-link",
+    path: "external-link2",
     component: Layout,
     children: [
       {
@@ -105,7 +117,6 @@ export const constantRoutes = [
       }
     ]
   },
-
   // 404 page must be placed at the end !!!
   { path: "*", redirect: "/404", hidden: true }
 ];
