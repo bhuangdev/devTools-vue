@@ -1,6 +1,6 @@
 <template>
   <div class="app-container">
-    正则验证功能
+    {{ test }}
   </div>
 </template>
 
@@ -8,12 +8,26 @@
 export default {
   data() {
     return {
-
+      test:'123sdfjs234',
+      result:true,
+      other:''
     }
   },
+  created(){
+    this.dosth();
+  },
   methods: {
-    test() {
-
+    dosth(){
+      this.other = this.codeReg(this.test);
+      var xxx = decodeURIComponent(this.other);
+    },
+    codeReg(param) {
+      var flag = new RegExp("[`@#$^&=|{}:;,\\[\\]<>《》/? ]")
+      if(flag.test(param)){
+        return encodeURIComponent(param);
+      }else{
+        return param;
+      }
     }
   }
 }
