@@ -31,8 +31,8 @@
     <el-col :span="6">
         <div class="grid-content">
             <a href="https://tool.oschina.net/regex/" target="_blank">
-                <el-card shadow="hover" style="height:200px;text-align:center;line-height:160px;">
-                    Regex
+                <el-card shadow="hover" style="height:200px;text-align:center;line-height:240px;">
+                    <img :src="regexsrc" style="width:40%;height:45%" />
                 </el-card>
             </a>
         </div>
@@ -47,7 +47,8 @@ export default {
     return {
         elesrc:require('../../assets/element.png'),
         colorsrc:require('../../assets/color.jpg'),
-        jsonsrc:require('../../assets/json.png')
+        jsonsrc:require('../../assets/json.png'),
+        regexsrc:require('../../assets/regex.jpg'),
     }
   },
   methods: {
