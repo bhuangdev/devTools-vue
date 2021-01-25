@@ -33,19 +33,19 @@ export const constantRoutes = [
         path: "dashboard",
         name: "Dashboard",
         component: () => import("@/views/dashboard/index"),
-        meta: { title: "Dashboard", icon: "dashboard" }
+        meta: { title: "主界面", icon: "dashboard" }
       }
     ]
   },
   {
-    path: "/color",
+    path: "/upload",
     component: Layout,
     children: [
       {
         path: "index",
-        name: "Color",
-        component: () => import("@/views/color/index"),
-        meta: { title: "Color Extraction", icon: "form" }
+        name: "Upload",
+        component: () => import("@/views/upload/index"),
+        meta: { title: "图片上传", icon: "form" }
       }
     ]
   },
@@ -57,19 +57,19 @@ export const constantRoutes = [
         path: "index",
         name: "Json",
         component: () => import("@/views/json/index"),
-        meta: { title: "Json Formatting", icon: "form" }
+        meta: { title: "Json格式化", icon: "form" }
       }
     ]
   },
   {
-    path: "/regular",
+    path: "/transfor",
     component: Layout,
     children: [
       {
         path: "index",
-        name: "Regular",
-        component: () => import("@/views/regular/index"),
-        meta: { title: "Regular Verification", icon: "form" }
+        name: "Transfor",
+        component: () => import("@/views/transfor/index"),
+        meta: { title: "进制转换", icon: "form" }
       }
     ]
   },
@@ -81,7 +81,7 @@ export const constantRoutes = [
         path: "index",
         name: "Translate",
         component: () => import("@/views/translate/index"),
-        meta: { title: "Translate", icon: "form" }
+        meta: { title: "翻译", icon: "form" }
       }
     ]
   },
@@ -93,7 +93,7 @@ export const constantRoutes = [
         path: "index",
         name: "Others",
         component: () => import("@/views/others/index"),
-        meta: { title: "Other Common Tools", icon: "form" }
+        meta: { title: "常用网站", icon: "form" }
       }
     ]
   },
@@ -103,7 +103,7 @@ export const constantRoutes = [
     children: [
       {
         path: "https://robinloveslife.cn/",
-        meta: { title: "My Blog", icon: "link" }
+        meta: { title: "个人博客", icon: "link" }
       }
     ]
   },
@@ -113,7 +113,7 @@ export const constantRoutes = [
     children: [
       {
         path: "https://www.cnblogs.com/huangbinlooksgood/",
-        meta: { title: "My cnBlog", icon: "link" }
+        meta: { title: "博客园", icon: "link" }
       }
     ]
   },
