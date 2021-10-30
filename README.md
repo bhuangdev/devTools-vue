@@ -6,7 +6,7 @@ npm install
 
 npm run dev
 
-在线演示地址：https://bhuangdev.github.io/devTools-vue/
+在线演示地址：https://bhuangdev.github.io/devTools-vue/dist/index.html
 
 ps:Base on ruoyi
 
